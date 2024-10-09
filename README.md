@@ -1,9 +1,5 @@
-# Project Title
-> Project Description
-
-**Goal:** ...
-
-The outline of this project is as follows:
+# Feedback System Synthetic Data Generation
+> This project uses DataDreamer and OpenAI GPT-4 to synthetically create two datasets for feedback classification.
 
 ## Installation
 
@@ -17,7 +13,13 @@ OS X & Linux:
         ```
     - Then activate the new conda environment:
         ```sh
-        conda activate conda_env
+        conda activate feedback_system_synthetic_data_generation
+        ```
+    - Due to the current version of datadreamer.dev, please follow these additional steps to add the datadreamer package to the project:
+        ```sh
+        pip install datadreamer.dev
+        pip install uninstall huggingface-hub
+        pip install huggingface-hub==0.24.7
         ```
 
 ## Usage example
@@ -60,3 +62,17 @@ python3 main.py ...
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
+
+## Citations:
+```sh
+@misc{patel2024datadreamer,
+      title={DataDreamer: A Tool for Synthetic Data Generation and Reproducible LLM Workflows}, 
+      author={Ajay Patel and Colin Raffel and Chris Callison-Burch},
+      year={2024},
+      eprint={2402.10379},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+1. Ajay Patel, Colin Raffel, and Chris Callison-Burch. 2024. DataDreamer: A Tool for Synthetic Data Generation and Reproducible LLM Workflows. arXiv. https://doi.org/10.48550/arxiv.2402.10379
+  
