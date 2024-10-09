@@ -1,61 +1,81 @@
 {
     "1": {
-        "appName": "MedMinder",
-        "feedback": "MedMinder has revolutionized medication management in my practice. Its user-friendly interface ensures patients adhere to their medication schedule. As a physician, I can monitor their compliance, enabling personalized care. However, some older patients find the technology challenging."
+        "appName": "Medscape",
+        "feedback": "Medscape is a resourceful tool for primary care. With the latest updates on medical news, it's an excellent asset. It offers an extensive drug reference database and various calculators used in clinical practice, which are beneficial. Despite its information overload, a more user-friendly interface would enhance usage."
     },
     "2": {
-        "appName": "Medscape",
-        "feedback": "As a healthcare provider, I find Medscape very useful. It is an informative resource with a vast library of drug and disease references. The medical news section stays updated with emerging healthcare research, which facilitates staying current in my field. I appreciate its feature of providing Continuing Medical Education (CME) credits. The application could improve with better personalization features. As is, however, I'd recommend to fellow practitioners for its handy, comprehensive content."
+        "appName": "Medmastery",
+        "feedback": "As a practicing physician, I find Medmastery essential for daily use. It's insightful, with tutorials that further refine my clinical judgement. It's user-friendly and a perfect aid for medical practitioners."
     },
     "3": {
         "appName": "Medscape",
-        "feedback": "This application is a true game changer. From the latest news, comprehensive drug and disease information, to medical calculators, it's almost like having an entire medical library at your fingertips. The tool is user-friendly and the interface is easy-to-navigate. However, the app can be slow at times, and sometimes there are issues logging in. Overall, I highly recommend Medscape to any healthcare provider."
+        "feedback": "As a practicing physician, I find Medscape incredibly useful. It delivers comprehensive clinical data that facilitates my day-to-day decision-making. The continually updated medical news is a bonus. However, it could be more user-friendly."
     },
     "4": {
-        "appName": "Epocrates",
-        "feedback": "As a doctor, Epocrates has proven to be an invaluable tool. The comprehensive drug information, interaction checks, and pill identification features are particularly useful. The application is user-friendly, allowing for quick reference during patient appointments. I do, however, wish the app included more extensive information on rare diseases. Regardless, it's a tool I highly recommend."
+        "appName": "Medscape",
+        "feedback": "As a practicing physician, I find Medscape incredibly useful. It's a comprehensive tool, covering a wide range of clinical information. The drug database and interaction checker are time-savers, helping me provide better patient care. It does have a learning curve, but it's worth it."
     },
     "5": {
-        "appName": "Medscape",
-        "feedback": "As a practicing doctor, Medscape proves incredibly valuable. This application provides a wealth of information \u2013 from the latest medical news to an extensive drug reference library. It serves as a reliable clinical decision support tool, assisting in diagnostic and treatment plans. The user interface is also intuitive and user-friendly, facilitating quick and easy use during the hectic hospital routine."
+        "appName": "MedMinder",
+        "feedback": "MedMinder is a useful tool for medication management. As a doctor, I've found it improves patient compliance. The reminders are beneficial, but navigating the app can be a challenge."
     },
     "6": {
         "appName": "MedMinder",
-        "feedback": "MedMinder is a critical tool for managing patient medications, improving adherence and reducing errors. The system's reminders are particularly useful, ensuring no doses are missed. However, the interface could be more user-friendly. As a physician, I appreciate the comprehensive medication database but would appreciate more in-depth drug interaction information. Overall, a valuable tool but with room for improvement."
+        "feedback": "MedMinder has revolutionized medication management in my practice. Its user-friendly interface ensures patients adhere to their medication schedule. As a physician, I can monitor their compliance, enabling personalized care. However, some older patients find the technology challenging."
     },
     "7": {
         "appName": "Medscape",
-        "feedback": "As a physician, I find Medscape exceptionally useful. The comprehensive disease/condition database is frequently updated, offering reliable and current data. The medication reference guide is easy to use and extremely detailed. The news section keeps me informed of the latest developments in the medical field. Easily accessible continuing medical education (CME) activities are also a big plus. Overall, a must-have for any medical professional."
+        "feedback": "As a healthcare provider, I find Medscape very useful. It is an informative resource with a vast library of drug and disease references. The medical news section stays updated with emerging healthcare research, which facilitates staying current in my field. I appreciate its feature of providing Continuing Medical Education (CME) credits. The application could improve with better personalization features. As is, however, I'd recommend to fellow practitioners for its handy, comprehensive content."
     },
     "8": {
-        "appName": "eClinicalWorks",
-        "feedback": "As a practicing physician, eClinicalWorks has greatly modernized my practice. Its intuitive UI simplifies patient data access and monitoring, making medical decision-making swifter and more effective. The platform seamlessly integrates with existing systems, reducing workflow disruption. Despite occasional software updates leading to brief periods of downtime, eClinicalWorks dramatically enhances efficiency, significantly improving patient care."
+        "appName": "Medscape",
+        "feedback": "This application is a true game changer. From the latest news, comprehensive drug and disease information, to medical calculators, it's almost like having an entire medical library at your fingertips. The tool is user-friendly and the interface is easy-to-navigate. However, the app can be slow at times, and sometimes there are issues logging in. Overall, I highly recommend Medscape to any healthcare provider."
     },
     "9": {
-        "appName": "Medscape",
-        "feedback": "A comprehensive platform offering a vast supply of medical resources. Useful for quick drug information, medical news, and peer-reviewed articles. The built-in calculators prove handy during clinical practice. However, the app could use improvements in its user interface for easier navigation."
+        "appName": "Epocrates",
+        "feedback": "As a doctor, Epocrates has proven to be an invaluable tool. The comprehensive drug information, interaction checks, and pill identification features are particularly useful. The application is user-friendly, allowing for quick reference during patient appointments. I do, however, wish the app included more extensive information on rare diseases. Regardless, it's a tool I highly recommend."
     },
     "10": {
         "appName": "Medscape",
-        "feedback": "As a doctor, I find Medscape highly valuable. It provides updated clinical information and guidelines, helping me make informed patient decisions. The drug interaction checker is a lifesaver. A minor issue is the load time, but the benefits outweigh this."
+        "feedback": "As a practicing doctor, Medscape proves incredibly valuable. This application provides a wealth of information \u2013 from the latest medical news to an extensive drug reference library. It serves as a reliable clinical decision support tool, assisting in diagnostic and treatment plans. The user interface is also intuitive and user-friendly, facilitating quick and easy use during the hectic hospital routine."
     },
     "11": {
-        "appName": "MedScape",
-        "feedback": "MedScape is an excellent resource, offering comprehensive medical information. It's user-friendly with quick, reliable access to references, which streamlines the diagnostic process. There are occasional issues with app updates, but overall, it's a valuable tool."
+        "appName": "MedMinder",
+        "feedback": "MedMinder is a critical tool for managing patient medications, improving adherence and reducing errors. The system's reminders are particularly useful, ensuring no doses are missed. However, the interface could be more user-friendly. As a physician, I appreciate the comprehensive medication database but would appreciate more in-depth drug interaction information. Overall, a valuable tool but with room for improvement."
     },
     "12": {
         "appName": "Medscape",
-        "feedback": "This app is a valuable asset in the medical field. It offers informative, reliable content on diseases, medications, and medical procedures. As a provider, I appreciate the easy-to-use interface. However, it could improve on its speed and responsiveness."
+        "feedback": "As a physician, I find Medscape exceptionally useful. The comprehensive disease/condition database is frequently updated, offering reliable and current data. The medication reference guide is easy to use and extremely detailed. The news section keeps me informed of the latest developments in the medical field. Easily accessible continuing medical education (CME) activities are also a big plus. Overall, a must-have for any medical professional."
     },
     "13": {
-        "appName": "Medscape",
-        "feedback": "As a medical provider, I find Medscape incredibly useful. It has comprehensive clinical information that's easy to access and understand. The drug and disease references are particularly useful in my practice. The interaction checker helps avoid potential issues, increasing patient safety. However, the app can be slow, which is frustrating during a busy shift. Overall, it's an invaluable tool for healthcare professionals, despite minor issues."
+        "appName": "eClinicalWorks",
+        "feedback": "As a practicing physician, eClinicalWorks has greatly modernized my practice. Its intuitive UI simplifies patient data access and monitoring, making medical decision-making swifter and more effective. The platform seamlessly integrates with existing systems, reducing workflow disruption. Despite occasional software updates leading to brief periods of downtime, eClinicalWorks dramatically enhances efficiency, significantly improving patient care."
     },
     "14": {
         "appName": "Medscape",
-        "feedback": "As a medical provider, Medscape proves to be a reliable source of information. It provides comprehensive and up-to-date clinical data, drug information, and medical news. However, its design can be overwhelming with too much information presented at once. Overall, it's a valuable tool, but the interface could be more user-friendly."
+        "feedback": "A comprehensive platform offering a vast supply of medical resources. Useful for quick drug information, medical news, and peer-reviewed articles. The built-in calculators prove handy during clinical practice. However, the app could use improvements in its user interface for easier navigation."
     },
     "15": {
+        "appName": "Medscape",
+        "feedback": "As a doctor, I find Medscape highly valuable. It provides updated clinical information and guidelines, helping me make informed patient decisions. The drug interaction checker is a lifesaver. A minor issue is the load time, but the benefits outweigh this."
+    },
+    "16": {
+        "appName": "MedScape",
+        "feedback": "MedScape is an excellent resource, offering comprehensive medical information. It's user-friendly with quick, reliable access to references, which streamlines the diagnostic process. There are occasional issues with app updates, but overall, it's a valuable tool."
+    },
+    "17": {
+        "appName": "Medscape",
+        "feedback": "This app is a valuable asset in the medical field. It offers informative, reliable content on diseases, medications, and medical procedures. As a provider, I appreciate the easy-to-use interface. However, it could improve on its speed and responsiveness."
+    },
+    "18": {
+        "appName": "Medscape",
+        "feedback": "As a medical provider, I find Medscape incredibly useful. It has comprehensive clinical information that's easy to access and understand. The drug and disease references are particularly useful in my practice. The interaction checker helps avoid potential issues, increasing patient safety. However, the app can be slow, which is frustrating during a busy shift. Overall, it's an invaluable tool for healthcare professionals, despite minor issues."
+    },
+    "19": {
+        "appName": "Medscape",
+        "feedback": "As a medical provider, Medscape proves to be a reliable source of information. It provides comprehensive and up-to-date clinical data, drug information, and medical news. However, its design can be overwhelming with too much information presented at once. Overall, it's a valuable tool, but the interface could be more user-friendly."
+    },
+    "20": {
         "appName": "EPIC CDS",
         "feedback": "As a practicing physician, EPIC Clinical Decision Support (CDS) tool has been invaluable. Its interoperability features ensure seamless care by facilitating information exchange. I appreciate its real-time alerts for potential issues, helping us avoid medical errors. However, the initial learning curve was steep, and excessive alerts sometimes cause alert fatigue. Despite these issues, its benefits significantly outweigh the negatives. It considerably aids in making informed, evidence-based decisions, improving patient outcomes."
     }
