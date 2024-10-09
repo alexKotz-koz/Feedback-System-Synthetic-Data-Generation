@@ -1,0 +1,3 @@
+pip install datadreamer.dev
+pip install uninstall huggingface-hub
+pip install huggingface-hub==0.24.7
