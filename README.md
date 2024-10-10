@@ -45,6 +45,28 @@ python3 main.py ...
 
 ## Description of Data
 
+- Location of sythnetically generated data: /src/data/
+     - FeedbackClassificationDataset.csv: A manually extracted dataset of athenaHealth EHR marketplace application store reviews Extracted the ... 
+     - clinical-application-feedback-data.json: Synthetic clinical decision support tool/healthcare application reviews
+     - Arguments:
+        - llm: gpt4
+        - n: 20
+        - temperature: 0.8
+        - instruction: 
+        1. "Generate a review of a clinical decision support tool or health care application from the perspective of a practicing medical provider (e.g. doctor, physicans assistant, nurse, or medical assistant).",
+        2. "Please make the number of words per comment follow an average of 73 with a standard deviation of 14.",
+        3. "Please format the data as: 'Name of Application/Tool: {name_of_app} | Application Review: {application_review}'"
+        
+    - student-feedback-data.json: Synthetic student evaluation of teaching-like data. 
+        - Arguments:
+            - llm: gpt4
+            - n: 20
+            - temperature: 0.8
+            - instruction:
+            1. "Generate a student evaluation of teaching feedback comment of a graduate school course from the perspective of a student who has just completed the course.",
+            2. "Please make the number of words per comment follow an average of 64 with a standard deviation of 21.",
+            3. "Please format the data as: 'Course Name: {course_name} | Student Feedback: {student_feedback_comment}'"
+
 ### Description of output
 
 ---
