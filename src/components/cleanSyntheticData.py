@@ -39,7 +39,7 @@ def extractStudentFeedbackData(dbFile):
         # Fetch data
         cursor.execute(f"SELECT * FROM {table_name};")
         rows = cursor.fetchall()
-        for row in rows[5:]:
+        for row in rows:
             data = row[1]
             if isinstance(data, bytes):
                 try:

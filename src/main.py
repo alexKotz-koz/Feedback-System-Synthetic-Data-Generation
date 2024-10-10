@@ -6,10 +6,12 @@ from components.generateSyntheticData import (
     generateStudentFeedback,
 )
 
-from components.cleanSyntheticData import (
-    extractStudentFeedbackData,
-    extractClinicalApplicationFeedbackData,
+from components.convertSyntheticData import (
+    convertStudentFeedbackData,
+    convertClinicalApplicationFeedbackData,
 )
+
+from components.feedbackAnalysis import wordCount, importData
 
 
 def setAPI():
@@ -20,54 +22,56 @@ def setAPI():
     os.environ["OPENAI_API_KEY"] = api_key
 
 
-def studentFeedbackData():
-    cwd = os.getcwd()
-
-    # DataDreamer Directory
-    studentFeedbackOutputDir = os.path.join(os.getcwd(), "student-feedback-output")
-    cacheDir = os.path.join(studentFeedbackOutputDir, ".cache")
-    dbFile = os.path.join(cacheDir, "OpenAI_gpt-4_d943856c9b1e8f80.db")
-
-    # Extracted Data Directory
-    dataDir = os.path.join(cwd, "data")
-
-    extractedStudentFeedbackData = extractStudentFeedbackData(dbFile)
-
-    studentFeedbackFile = os.path.join(dataDir, "student-feedback-data.json")
-    with open(studentFeedbackFile, "w") as f:
-        json.dump(extractedStudentFeedbackData, f, indent=4)
-
-
-def clinicalApplicationData():
-    cwd = os.getcwd()
-
-    # DataDreamer Directory
-    clinicalApplicationOutputDir = os.path.join(
-        os.getcwd(), "clinical-application-feedback-output"
-    )
-    cacheDir = os.path.join(clinicalApplicationOutputDir, ".cache")
-    dbFile = os.path.join(cacheDir, "OpenAI_gpt-4_d943856c9b1e8f80.db")
-
-    # Extracted Data Directory
-    dataDir = os.path.join(cwd, "data")
-
-    extractedClinicalApplicationFeedbackData = extractClinicalApplicationFeedbackData(
-        dbFile
-    )
-
-    clinicalApplicationFeedbackFile = os.path.join(
-        dataDir, "clinical-application-feedback-data.json"
-    )
-    with open(clinicalApplicationFeedbackFile, "w") as f:
-        json.dump(extractedClinicalApplicationFeedbackData, f, indent=4)
-
-
 def main():
     setAPI()
     # generateStudentFeedback()
     # generateClinicalApplicationFeedback()
-    # studentFeedbackData()
-    clinicalApplicationData()
+    """convertStudentFeedbackData(
+        "student-feedback-output-temp-.5", "student-feedback-data-2.json"
+    )
+    convertClinicalApplicationFeedbackData(
+        "clinical-application-feedback-output-temp-.5",
+        "clinical-application-feedback-data-2.json",
+    )"""
+
+    cwd = os.getcwd()
+    dataDir = os.path.join(cwd, "data")
+
+    clinicalApplicationFeedbackDataFilepath = os.path.join(
+        dataDir, "clinical-application-feedback-data.json"
+    )
+    clinicalApplicationFeedbackData2Filepath = os.path.join(
+        dataDir, "clinical-application-feedback-data-2.json"
+    )
+
+    clinicalApplicationFeedbackData = importData(
+        clinicalApplicationFeedbackDataFilepath
+    )
+    clinicalApplicationFeedbackData2 = importData(
+        clinicalApplicationFeedbackData2Filepath
+    )
+
+    clinicalApplicationFeedbackNumWords, clinicalApplicationFeedbackAvgWords = (
+        wordCount(clinicalApplicationFeedbackData)
+    )
+
+    clinicalApplicationFeedback2NumWords, clinicalApplicationFeedback2AvgWords = (
+        wordCount(clinicalApplicationFeedbackData2)
+    )
+
+    print(
+        f"Total Word Count clinicalApplicationFeedback: {clinicalApplicationFeedbackNumWords}"
+    )
+    print(
+        f"Avg Word Count clinicalApplicationFeedback: {clinicalApplicationFeedbackAvgWords}"
+    )
+
+    print(
+        f"Total Word Count clinicalApplicationFeedback2: {clinicalApplicationFeedback2NumWords}"
+    )
+    print(
+        f"Avg Word Count clinicalApplicationFeedback: {clinicalApplicationFeedback2AvgWords}"
+    )
 
 
 if __name__ == "__main__":
