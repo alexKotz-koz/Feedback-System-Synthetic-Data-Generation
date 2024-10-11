@@ -10,7 +10,8 @@ def convertStudentFeedbackData(syntheticFileName, outputFileName):
     cwd = os.getcwd()
 
     # DataDreamer Directory
-    studentFeedbackOutputDir = os.path.join(cwd, syntheticFileName)
+    dataDreamerDir = os.path.join(cwd, "data-dreamer-output")
+    studentFeedbackOutputDir = os.path.join(dataDreamerDir, syntheticFileName)
     cacheDir = os.path.join(studentFeedbackOutputDir, ".cache")
     dbFile = os.path.join(cacheDir, "OpenAI_gpt-4_d943856c9b1e8f80.db")
 
@@ -29,9 +30,10 @@ def convertStudentFeedbackData(syntheticFileName, outputFileName):
 
 def convertClinicalApplicationFeedbackData(syntheticFileName, outputFileName):
     cwd = os.getcwd()
-    syntheticFileName
+
     # DataDreamer Directory
-    clinicalApplicationOutputDir = os.path.join(cwd, syntheticFileName)
+    dataDreamerDir = os.path.join(cwd, "data-dreamer-output")
+    clinicalApplicationOutputDir = os.path.join(dataDreamerDir, syntheticFileName)
     cacheDir = os.path.join(clinicalApplicationOutputDir, ".cache")
     dbFile = os.path.join(cacheDir, "OpenAI_gpt-4_d943856c9b1e8f80.db")
 

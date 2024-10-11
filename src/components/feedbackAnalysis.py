@@ -1,6 +1,7 @@
 import os
 import json
 import pandas as pd
+import matplotlib.pyplot as plt
 
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.corpus import stopwords
@@ -48,7 +49,7 @@ def preprocessText(feedback):
 def getSentiment(feedback):
     analyzer = SentimentIntensityAnalyzer()
     scores = analyzer.polarity_scores(feedback)
-    # sentiment = 1 if scores["pos"] > 0 else 0
+    sentiment = 1 if scores["pos"] > 0 else 0
     return scores
 
 
@@ -101,3 +102,4 @@ def setAnalysis(dataDir):
                 newFileName = f"studentFeedback-{temp}"
                 newFilePath = os.path.join(analyzedDir, newFileName)
                 setData.to_json(f"{newFilePath}.json")
+                print(setData["sentiment"])

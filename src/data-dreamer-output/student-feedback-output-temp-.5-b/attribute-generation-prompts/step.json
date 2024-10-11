@@ -1,0 +1,35 @@
+{
+    "data_card": {
+        "Attribute Generation Prompts": {
+            "Date & Time": "2024-10-11T14:16:44.458725"
+        }
+    },
+    "__version__": "0.38.0",
+    "datetime": "2024-10-11T14:16:44.458755",
+    "type": "DataSource",
+    "name": "Attribute Generation Prompts",
+    "version": 1.0,
+    "fingerprint": "90e75970291f856a",
+    "pickled": false,
+    "req_versions": {
+        "dill": "0.3.8",
+        "sqlitedict": "2.1.0",
+        "torch": "2.4.1",
+        "numpy": "1.26.4",
+        "transformers": "4.44.2",
+        "datasets": "2.21.0",
+        "huggingface_hub": "0.24.7",
+        "accelerate": "0.34.2",
+        "peft": "0.13.1",
+        "tiktoken": "0.8.0",
+        "tokenizers": "0.19.1",
+        "openai": "1.51.2",
+        "ctransformers": "0.2.27",
+        "optimum": "1.22.0",
+        "bitsandbytes": "0.42.0",
+        "litellm": "1.42.5",
+        "trl": "0.9.6",
+        "setfit": "1.1.0"
+    },
+    "interpreter": "3.11.10 (main, Oct  3 2024, 02:26:51) [Clang 14.0.6 ]"
+}

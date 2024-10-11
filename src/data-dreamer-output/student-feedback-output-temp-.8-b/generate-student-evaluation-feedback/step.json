@@ -1,0 +1,48 @@
+{
+    "data_card": {
+        "Generate Student Evaluation Feedback": {
+            "Date & Time": "2024-10-11T14:49:05.821797",
+            "Model Name": [
+                "gpt-4"
+            ],
+            "Model Card": [
+                "https://cdn.openai.com/papers/gpt-4-system-card.pdf"
+            ],
+            "License Information": [
+                "https://openai.com/policies"
+            ],
+            "Citation Information": [
+                "@article{OpenAI2023GPT4TR,\n  title={GPT-4 Technical Report},\n  author={OpenAI},\n  journal={ArXiv},\n  year={2023},\n  volume={abs/2303.08774},\n  url={https://api.semanticscholar.org/CorpusID:257532815}\n}",
+                "@article{ouyang2022training,\n  title={Training language models to follow instructions with human feedback},\n  author={Ouyang, Long and Wu, Jeffrey and Jiang, Xu and Almeida, Diogo and Wainwright, Carroll and Mishkin, Pamela and Zhang, Chong and Agarwal, Sandhini and Slama, Katarina and Ray, Alex and others},\n  journal={Advances in Neural Information Processing Systems},\n  volume={35},\n  pages={27730--27744},\n  year={2022}\n}"
+            ]
+        }
+    },
+    "__version__": "0.38.0",
+    "datetime": "2024-10-11T14:49:05.821830",
+    "type": "DataFromPrompt",
+    "name": "Generate Student Evaluation Feedback",
+    "version": 1.0,
+    "fingerprint": "79cfba21569b7965",
+    "pickled": false,
+    "req_versions": {
+        "dill": "0.3.8",
+        "sqlitedict": "2.1.0",
+        "torch": "2.4.1",
+        "numpy": "1.26.4",
+        "transformers": "4.44.2",
+        "datasets": "2.21.0",
+        "huggingface_hub": "0.24.7",
+        "accelerate": "0.34.2",
+        "peft": "0.13.1",
+        "tiktoken": "0.8.0",
+        "tokenizers": "0.19.1",
+        "openai": "1.51.2",
+        "ctransformers": "0.2.27",
+        "optimum": "1.22.0",
+        "bitsandbytes": "0.42.0",
+        "litellm": "1.42.5",
+        "trl": "0.9.6",
+        "setfit": "1.1.0"
+    },
+    "interpreter": "3.11.10 (main, Oct  3 2024, 02:26:51) [Clang 14.0.6 ]"
+}

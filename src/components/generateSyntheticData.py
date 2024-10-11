@@ -1,6 +1,65 @@
+import random
 from datadreamer import DataDreamer
 from datadreamer.llms import OpenAI
-from datadreamer.steps import DataFromPrompt
+from datadreamer.steps import (
+    DataFromPrompt,
+    DataFromAttributedPrompt,
+    Prompt,
+    DataSource,
+)
+
+
+def generateRandomSentiment():
+    return random.randint(0, 1)
+
+
+def generateStudentFeedbackAttributed(temperature, outputDirName):
+    with DataDreamer(f"./data-dreamer-output/{outputDirName}"):
+        gpt4 = OpenAI(model_name="gpt-4")
+
+        attributeGenerationPrompts = DataSource(
+            "Attribute Generation Prompts",
+            data={
+                "prompts": [
+                    "Generate the names of 10 graduate school courses, in a comma separated list.",
+                    "Generate 10 random instances of the strings,'positive' or 'negative', in a comma separated list.",
+                    "Generate 10 random integers between 40 and 80, in a comma separated list.",
+                ]
+            },
+        )
+
+        attributes = Prompt(
+            "Generate Attributes",
+            inputs={
+                "prompts": attributeGenerationPrompts.output["prompts"],
+            },
+            args={
+                "llm": gpt4,
+            },
+        ).output["generations"]
+
+        studentEvaluationFeedback = (
+            DataFromAttributedPrompt(
+                "Generate Student Evaluation",
+                args={
+                    "llm": gpt4,
+                    "n": 20,
+                    "temperature": temperature,
+                    "instruction": (
+                        "Generate a student evaluation of teaching feedback comment of the {courseName} graduate school course. Please make the feedback comment {numWords} words. Please make the feedback comment have an overall {sentiment} sentiment. Please format the comment as 'Course Name: {courseName} | Student Feedback: {student feedback comment}."
+                    ),
+                    "attributes": {
+                        "courseName": attributes[0].split(","),
+                        "sentiment": attributes[1].split(","),
+                        "numWords": attributes[2].split(","),
+                    },
+                },
+                outputs={"generations": "feedback"},
+            )
+            .select_columns(["feedback"])
+            .shuffle()
+        )
+        print(studentEvaluationFeedback)
 
 
 def generateStudentFeedback(temperature, outputDirName):
@@ -8,7 +67,7 @@ def generateStudentFeedback(temperature, outputDirName):
         gpt4 = OpenAI(model_name="gpt-4")
 
         studentEvaluationFeedback = DataFromPrompt(
-            "Generate Student Evalution Feedback",
+            "Generate Student Evaluation Feedback",
             args={
                 "llm": gpt4,
                 "n": 20,

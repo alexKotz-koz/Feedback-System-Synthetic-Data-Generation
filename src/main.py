@@ -4,6 +4,8 @@ import json
 from components.generateSyntheticData import (
     generateClinicalApplicationFeedback,
     generateStudentFeedback,
+    generateStudentFeedbackAttributed,
+    generateRandomSentiment,
 )
 
 from components.convertSyntheticData import (
@@ -41,11 +43,12 @@ def main():
 
     ### Generate Feedback from DataDreamer
 
-    # setOutputDirName = "student-feedback-output-temp-.8"
-    # setOutputDirName = "student-feedback-output-temp-.5"
-    # setOutputDirName = "student-feedback-output-temp-.2"
-    setOutputDirName = "student-feedback-output-temp-1.1"
-    # generateStudentFeedback(temperature=1.1, outputDirName=setOutputDirName)
+    # setOutputDirName = "student-feedback-output-temp-.8-b"
+    # setOutputDirName = "student-feedback-output-temp-.5-b"
+    # setOutputDirName = "student-feedback-output-temp-.2-b"
+    # setOutputDirName = "student-feedback-output-temp-1.1-b"
+    # generateStudentFeedback(temperature=0.8, outputDirName=setOutputDirName)
+    # generateStudentFeedbackAttributed(temperature=0.5, outputDirName=setOutputDirName)
 
     # cafOutputDirName = "clinical-application-feedback-output-temp-.8"
     # cafOutputDirName = "clinical-application-feedback-output-temp-.5"
@@ -54,15 +57,14 @@ def main():
     # generateClinicalApplicationFeedback(temperature=1.1, outputDirName=cafOutputDirName)
 
     ### Clean and otherwise transform the data
-    convertStudentFeedbackData(setOutputDirName, "student-feedback-data-temp-1.1.json")
+    # convertStudentFeedbackData(setOutputDirName, "student-feedback-data-temp-.8-b.json")
     # convertClinicalApplicationFeedbackData(cafOutputDirName, "clinical-application-feedback-data-temp-1.1.json")
 
     ### Feedback Analysis
-    """cwd = os.getcwd()
-    dataDir = os.path.join(cwd, "data")
-    cafAnalysis(dataDir)
-    setAnalysis(dataDir)
-"""
+    # cwd = os.getcwd()
+    # dataDir = os.path.join(cwd, "data/1-b-converted-synthetic-data")
+    # cafAnalysis(dataDir)
+    # setAnalysis(dataDir)
 
 
 if __name__ == "__main__":
