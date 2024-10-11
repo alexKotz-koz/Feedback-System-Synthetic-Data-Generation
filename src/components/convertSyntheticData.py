@@ -6,39 +6,44 @@ from components.cleanSyntheticData import (
 )
 
 
-def convertStudentFeedbackData(syntheticDataDir, outputFileName):
+def convertStudentFeedbackData(syntheticFileName, outputFileName):
     cwd = os.getcwd()
 
     # DataDreamer Directory
-    studentFeedbackOutputDir = os.path.join(cwd, syntheticDataDir)
+    studentFeedbackOutputDir = os.path.join(cwd, syntheticFileName)
     cacheDir = os.path.join(studentFeedbackOutputDir, ".cache")
     dbFile = os.path.join(cacheDir, "OpenAI_gpt-4_d943856c9b1e8f80.db")
 
     # Extracted Data Directory
     dataDir = os.path.join(cwd, "data")
+    syntheticDataDir = os.path.join(dataDir, "1-b-converted-synthetic-data")
+    os.makedirs(syntheticDataDir, exist_ok=True)
 
     extractedStudentFeedbackData = extractStudentFeedbackData(dbFile)
 
-    studentFeedbackFile = os.path.join(dataDir, outputFileName)
+    studentFeedbackFile = os.path.join(syntheticDataDir, outputFileName)
+
     with open(studentFeedbackFile, "w") as f:
         json.dump(extractedStudentFeedbackData, f, indent=4)
 
 
-def convertClinicalApplicationFeedbackData(syntheticDataDir, outputFileName):
+def convertClinicalApplicationFeedbackData(syntheticFileName, outputFileName):
     cwd = os.getcwd()
-
+    syntheticFileName
     # DataDreamer Directory
-    clinicalApplicationOutputDir = os.path.join(cwd, syntheticDataDir)
+    clinicalApplicationOutputDir = os.path.join(cwd, syntheticFileName)
     cacheDir = os.path.join(clinicalApplicationOutputDir, ".cache")
     dbFile = os.path.join(cacheDir, "OpenAI_gpt-4_d943856c9b1e8f80.db")
 
     # Extracted Data Directory
     dataDir = os.path.join(cwd, "data")
+    syntheticDataDir = os.path.join(dataDir, "1-b-converted-synthetic-data")
+    os.makedirs(syntheticDataDir, exist_ok=True)
 
     extractedClinicalApplicationFeedbackData = extractClinicalApplicationFeedbackData(
         dbFile
     )
 
-    clinicalApplicationFeedbackFile = os.path.join(dataDir, outputFileName)
+    clinicalApplicationFeedbackFile = os.path.join(syntheticDataDir, outputFileName)
     with open(clinicalApplicationFeedbackFile, "w") as f:
         json.dump(extractedClinicalApplicationFeedbackData, f, indent=4)

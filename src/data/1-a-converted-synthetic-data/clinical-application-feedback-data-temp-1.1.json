@@ -1,0 +1,82 @@
+{
+    "1": {
+        "appName": "MedicusAI",
+        "feedback": "As a practitioner, I recommend MedicusAI due to its advanced AI tools. It offers real-time analysis of patient data and seamlessly integrates lab results leading to effective patient management."
+    },
+    "2": {
+        "appName": "Medscape",
+        "feedback": "As a medical provider, I find Medscape incredibly useful for clinical decision-making. Quick access to a vast array of medical articles and drug information enhances practice efficiency. The user interface, while robust, can sometimes be mildly overwhelming."
+    },
+    "3": {
+        "appName": "MedScape",
+        "feedback": "MedScape proves to be an exceptional decision support tool. It provides latest research, diagnostic toolkits, and valuable drug info. However, interface could use a refresh for modern appeal. Overall, a powerful tool in medical practice."
+    },
+    "4": {
+        "appName": "Medscape",
+        "feedback": "As a medical provider, Medscape is incredibly helpful. It offers a myriad of peer-reviewed articles, medical news, tools, and educational resources. The drug-disease interaction and pill identifier tools are very valuable for a busy clinical environment. A slight negative is the quantity of information which can overwhelm."
+    },
+    "5": {
+        "appName": "Epocrates",
+        "feedback": "This tool offers consistently reliable, readily accessible medical info. As a doctor, I appreciate the easy-to-use format that quickly provides accurate drug info, checks potential interaction between drugs, and contains multiple calculation tools. Though it isn't free, the inherent value greatly outweighs the cost."
+    },
+    "6": {
+        "appName": "Medscape",
+        "feedback": "Medscape excels in offering physicians a comprehensive and well-structured database of medical information. Its clinical decision support tools are easy to use, updated on a regular basis, and deliver high-quality, pertinent information for clinical practice. The drawback is the user-interface could be made more intuitive. Still, it's proven to be an indispensable asset in any fast-paced healthcare setting."
+    },
+    "7": {
+        "appName": "Epocrates",
+        "feedback": "I regard Epocrates as a useful resource in my medical practice. I appreciate the drug information and interaction checker. Nevertheless, the need for continuous updates can be frustrating."
+    },
+    "8": {
+        "appName": "Medscape",
+        "feedback": "Medscape is a superior tool for medical practitioners. The wealth of reference materials for diagnosis assists in clinical decision making. The interactive drug interaction checker is stellar. Only complaint would be that the app can run rather slowly at times, a minor hindrance considering its overall utility."
+    },
+    "9": {
+        "appName": "MedMinder",
+        "feedback": "An exceptional tool that greatly aids in medication management. Clear interface with intuitive use, cannot stress its appropriateness in a clinical healthcare flow. Slight improvements in speed would tremendously enhance its utility even more."
+    },
+    "10": {
+        "appName": "Medscape",
+        "feedback": "This comprehensive application is an essential tool for medical professionals. With continuously updated medical news and a drug database this resource is invaluable. It offers access to thousands of medical articles and an array of clinical educations."
+    },
+    "11": {
+        "appName": "Epocrates",
+        "feedback": "A radically useful tool. The extensive drug database with built-in interaction checker streamlines prescribing decisions. Moreover, disease info and diagnostic aids enhance patient consultations tremendously."
+    },
+    "12": {
+        "appName": "Medscape",
+        "feedback": "As a practitioner, Medscape\u2019s relevance is highly appreciated. The comprehensive disease information, clinical images, and drug information are incredibly useful. However, module layout tweak might improve the user experience significantly."
+    },
+    "13": {
+        "appName": "Medscape",
+        "feedback": "As a practicing provider, I find Medscape incredibly useful. It's comprehensive and current - easily accessible, offering prompt medical guidance, making time-consuming research easier. The tool extends up-to-date shares on clinical trials and medical advances, aiding in ensuring optimal patient care."
+    },
+    "14": {
+        "appName": "MEDISCAN",
+        "feedback": "Having used this application for a while, I find it highly efficient. Initially, the interface seemed a little tricky, but after understanding its various features, I'm quite impressed. This tool enables easy capturing and storing patient radiographic histories with minimal error rates. It has become a necessity in my day-to-day operations."
+    },
+    "15": {
+        "appName": "MediMorph",
+        "feedback": "This innovative tool has successfully revolutionized my medical practice. From streamlining appointments to securely storing patient details, it effortlessly combines efficiency and privacy."
+    },
+    "16": {
+        "appName": "Medscape",
+        "feedback": "It's a great application for accessing real-time medical news which aids in staying current. The comprehensive resources such as drugs and diseases' info pages, really assist in patient care. However, the app's loading speed might need a bit of improvement.'"
+    },
+    "17": {
+        "appName": "Medscape",
+        "feedback": "An efficient tool for busy health professionals who need quick access to the latest medical news and research. It\u2019s a valuable resource with substantial clinical reference library catering to a broad array of specialties."
+    },
+    "18": {
+        "appName": "MedMinder",
+        "feedback": "As a professional physician, MedMinder impresses me with its unique characteristics. Helps efficiently in management of patient medications. Its reminding capability eliminates inaccuracies in medication regimens. I have efficiently coordinated multiple patients using this application. A feature I highly regard is the live updates about patient's medicine intake., ensuring safety, a crucial point in our field. A slightly confusing user-interface was a minor setback initially, getting prominent and effective once acclimated. It optimizes the quality of healthcare given."
+    },
+    "19": {
+        "appName": "MedAssist",
+        "feedback": "As a physician, MedAssist has become an indispensable tool in my daily practice. Its AI-supported algorithms for differential diagnosis save me invaluable time. Though initially confusing, the learning curve justified the promised benefits."
+    },
+    "20": {
+        "appName": "Medscape",
+        "feedback": "An invaluable and versatile tool for professionals in healthcare. Offers various resources such as medical news updates, medical calculators, and drug information, increasing the speed and confidence in decision-making. There can be interfacing issues at times."
+    }
+}

@@ -11,7 +11,21 @@ from components.convertSyntheticData import (
     convertClinicalApplicationFeedbackData,
 )
 
-from components.feedbackAnalysis import wordCount, importData
+from components.feedbackAnalysis import (
+    downloadNLTK,
+    wordCount,
+    importData,
+    preprocessText,
+    getSentiment,
+    setAnalysis,
+    cafAnalysis,
+)
+
+"""
+Abbreviations: 
+- CAF: Clinical Application Feedback (Clinical Decision Support Tools or Healthcare Applications)
+- SET: Student Evaluations of Teaching Feedback
+"""
 
 
 def setAPI():
@@ -24,54 +38,31 @@ def setAPI():
 
 def main():
     setAPI()
-    # generateStudentFeedback()
-    # generateClinicalApplicationFeedback()
-    """convertStudentFeedbackData(
-        "student-feedback-output-temp-.5", "student-feedback-data-2.json"
-    )
-    convertClinicalApplicationFeedbackData(
-        "clinical-application-feedback-output-temp-.5",
-        "clinical-application-feedback-data-2.json",
-    )"""
 
-    cwd = os.getcwd()
+    ### Generate Feedback from DataDreamer
+
+    # setOutputDirName = "student-feedback-output-temp-.8"
+    # setOutputDirName = "student-feedback-output-temp-.5"
+    # setOutputDirName = "student-feedback-output-temp-.2"
+    setOutputDirName = "student-feedback-output-temp-1.1"
+    # generateStudentFeedback(temperature=1.1, outputDirName=setOutputDirName)
+
+    # cafOutputDirName = "clinical-application-feedback-output-temp-.8"
+    # cafOutputDirName = "clinical-application-feedback-output-temp-.5"
+    # cafOutputDirName = "clinical-application-feedback-output-temp-.2"
+    # cafOutputDirName = "clinical-application-feedback-output-temp-1.1"
+    # generateClinicalApplicationFeedback(temperature=1.1, outputDirName=cafOutputDirName)
+
+    ### Clean and otherwise transform the data
+    convertStudentFeedbackData(setOutputDirName, "student-feedback-data-temp-1.1.json")
+    # convertClinicalApplicationFeedbackData(cafOutputDirName, "clinical-application-feedback-data-temp-1.1.json")
+
+    ### Feedback Analysis
+    """cwd = os.getcwd()
     dataDir = os.path.join(cwd, "data")
-
-    clinicalApplicationFeedbackDataFilepath = os.path.join(
-        dataDir, "clinical-application-feedback-data.json"
-    )
-    clinicalApplicationFeedbackData2Filepath = os.path.join(
-        dataDir, "clinical-application-feedback-data-2.json"
-    )
-
-    clinicalApplicationFeedbackData = importData(
-        clinicalApplicationFeedbackDataFilepath
-    )
-    clinicalApplicationFeedbackData2 = importData(
-        clinicalApplicationFeedbackData2Filepath
-    )
-
-    clinicalApplicationFeedbackNumWords, clinicalApplicationFeedbackAvgWords = (
-        wordCount(clinicalApplicationFeedbackData)
-    )
-
-    clinicalApplicationFeedback2NumWords, clinicalApplicationFeedback2AvgWords = (
-        wordCount(clinicalApplicationFeedbackData2)
-    )
-
-    print(
-        f"Total Word Count clinicalApplicationFeedback: {clinicalApplicationFeedbackNumWords}"
-    )
-    print(
-        f"Avg Word Count clinicalApplicationFeedback: {clinicalApplicationFeedbackAvgWords}"
-    )
-
-    print(
-        f"Total Word Count clinicalApplicationFeedback2: {clinicalApplicationFeedback2NumWords}"
-    )
-    print(
-        f"Avg Word Count clinicalApplicationFeedback: {clinicalApplicationFeedback2AvgWords}"
-    )
+    cafAnalysis(dataDir)
+    setAnalysis(dataDir)
+"""
 
 
 if __name__ == "__main__":

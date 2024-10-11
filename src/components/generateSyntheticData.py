@@ -3,8 +3,8 @@ from datadreamer.llms import OpenAI
 from datadreamer.steps import DataFromPrompt
 
 
-def generateStudentFeedback():
-    with DataDreamer("./student-feedback-output-temp-.5"):
+def generateStudentFeedback(temperature, outputDirName):
+    with DataDreamer(f"./{outputDirName}"):
         gpt4 = OpenAI(model_name="gpt-4")
 
         studentEvaluationFeedback = DataFromPrompt(
@@ -12,7 +12,7 @@ def generateStudentFeedback():
             args={
                 "llm": gpt4,
                 "n": 20,
-                "temperature": 0.5,
+                "temperature": temperature,
                 "instruction": (
                     "Generate a student evaluation of teaching feedback comment of a graduate school course from the perspective of a student who has just completed the course.",
                     "Please make the number of words per comment follow an average of 64 with a standard deviation of 21.",
@@ -24,8 +24,8 @@ def generateStudentFeedback():
         print(studentEvaluationFeedback)
 
 
-def generateClinicalApplicationFeedback():
-    with DataDreamer("./clinical-application-feedback-output-temp-.5"):
+def generateClinicalApplicationFeedback(temperature, outputDirName):
+    with DataDreamer(f"./{outputDirName}"):
         gpt4 = OpenAI(model_name="gpt-4")
 
         clinicalApplicationFeedback = DataFromPrompt(
@@ -33,7 +33,7 @@ def generateClinicalApplicationFeedback():
             args={
                 "llm": gpt4,
                 "n": 20,
-                "temperature": 0.5,
+                "temperature": temperature,
                 "instruction": (
                     "Generate a review of a clinical decision support tool or health care application from the perspective of a practicing medical provider (e.g. doctor, physicans assistant, nurse, or medical assistant).",
                     "Please make the number of words per comment follow an average of 73 with a standard deviation of 14.",
