@@ -1,3 +1,4 @@
 .DS_Store
 src/secrets
 src/components/__pycache__
+src/data/1-b-converted-synthetic-data

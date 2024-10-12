@@ -17,7 +17,7 @@ def convertStudentFeedbackData(syntheticFileName, outputFileName):
 
     # Extracted Data Directory
     dataDir = os.path.join(cwd, "data")
-    syntheticDataDir = os.path.join(dataDir, "1-b-converted-synthetic-data")
+    syntheticDataDir = os.path.join(dataDir, "1-c-converted-synthetic-data")
     os.makedirs(syntheticDataDir, exist_ok=True)
 
     extractedStudentFeedbackData = extractStudentFeedbackData(dbFile)
@@ -39,7 +39,7 @@ def convertClinicalApplicationFeedbackData(syntheticFileName, outputFileName):
 
     # Extracted Data Directory
     dataDir = os.path.join(cwd, "data")
-    syntheticDataDir = os.path.join(dataDir, "1-b-converted-synthetic-data")
+    syntheticDataDir = os.path.join(dataDir, "1-c-converted-synthetic-data")
     os.makedirs(syntheticDataDir, exist_ok=True)
 
     extractedClinicalApplicationFeedbackData = extractClinicalApplicationFeedbackData(

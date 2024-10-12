@@ -10,7 +10,9 @@ from datadreamer.steps import (
 
 
 def generateRandomSentiment():
-    return random.randint(0, 1)
+    sentiment = random.randint(0, 1)
+    print(sentiment)
+    return sentiment
 
 
 def generateStudentFeedbackAttributed(temperature, outputDirName):
@@ -63,7 +65,7 @@ def generateStudentFeedbackAttributed(temperature, outputDirName):
 
 
 def generateStudentFeedback(temperature, outputDirName):
-    with DataDreamer(f"./{outputDirName}"):
+    with DataDreamer(f"./data-dreamer-output/{outputDirName}"):
         gpt4 = OpenAI(model_name="gpt-4")
 
         studentEvaluationFeedback = DataFromPrompt(
@@ -74,7 +76,8 @@ def generateStudentFeedback(temperature, outputDirName):
                 "temperature": temperature,
                 "instruction": (
                     "Generate a student evaluation of teaching feedback comment of a graduate school course from the perspective of a student who has just completed the course.",
-                    "Please make the number of words per comment follow an average of 64 with a standard deviation of 21.",
+                    "Please make the feedback comment between 22 and 106 words.",
+                    "Please randomly choose between negative or positive sentiment. Make the feedback comment overwhelmingly {your chosen sentiment}.",
                     "Please format the data as: 'Course Name: {course_name} | Student Feedback: {student_feedback_comment}'",
                 ),
             },
@@ -84,7 +87,7 @@ def generateStudentFeedback(temperature, outputDirName):
 
 
 def generateClinicalApplicationFeedback(temperature, outputDirName):
-    with DataDreamer(f"./{outputDirName}"):
+    with DataDreamer(f"./data-dreamer-output/{outputDirName}"):
         gpt4 = OpenAI(model_name="gpt-4")
 
         clinicalApplicationFeedback = DataFromPrompt(
@@ -95,8 +98,8 @@ def generateClinicalApplicationFeedback(temperature, outputDirName):
                 "temperature": temperature,
                 "instruction": (
                     "Generate a review of a clinical decision support tool or health care application from the perspective of a practicing medical provider (e.g. doctor, physicans assistant, nurse, or medical assistant).",
-                    "Please make the number of words per comment follow an average of 73 with a standard deviation of 14.",
-                    # when I first generated the data I added a type of three p's to application -> reflected in the cleaning of this dataset
+                    "Please make the review between 45 and 101 words.",
+                    "Please randomly choose between negative or positive sentiment. Make the feedback comment overwhelmingly {your chosen sentiment}.",
                     "Please format the data as: 'Name of Application/Tool: {name_of_app} | Application Review: {application_review}'",
                 ),
             },

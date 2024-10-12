@@ -41,30 +41,25 @@ def setAPI():
 def main():
     setAPI()
 
-    ### Generate Feedback from DataDreamer
+    # temperature = 0.2
 
-    # setOutputDirName = "student-feedback-output-temp-.8-b"
-    # setOutputDirName = "student-feedback-output-temp-.5-b"
-    # setOutputDirName = "student-feedback-output-temp-.2-b"
-    # setOutputDirName = "student-feedback-output-temp-1.1-b"
-    # generateStudentFeedback(temperature=0.8, outputDirName=setOutputDirName)
+    ### Generate Feedback from DataDreamer
+    # setOutputDirName = f"student-feedback-output-temp-{temperature}-c"
+    # generateStudentFeedback(temperature=temperature, outputDirName=setOutputDirName)
     # generateStudentFeedbackAttributed(temperature=0.5, outputDirName=setOutputDirName)
 
-    # cafOutputDirName = "clinical-application-feedback-output-temp-.8"
-    # cafOutputDirName = "clinical-application-feedback-output-temp-.5"
-    # cafOutputDirName = "clinical-application-feedback-output-temp-.2"
-    # cafOutputDirName = "clinical-application-feedback-output-temp-1.1"
-    # generateClinicalApplicationFeedback(temperature=1.1, outputDirName=cafOutputDirName)
+    # cafOutputDirName = f"clinical-application-feedback-output-temp-{temperature}-c"
+    # generateClinicalApplicationFeedback(temperature=temperature, outputDirName=cafOutputDirName)
 
     ### Clean and otherwise transform the data
-    # convertStudentFeedbackData(setOutputDirName, "student-feedback-data-temp-.8-b.json")
-    # convertClinicalApplicationFeedbackData(cafOutputDirName, "clinical-application-feedback-data-temp-1.1.json")
+    # convertStudentFeedbackData(setOutputDirName, f"student-feedback-data-temp-{temperature}-c.json")
+    # convertClinicalApplicationFeedbackData(cafOutputDirName,f"clinical-application-feedback-data-temp-{temperature}-c.json")
 
     ### Feedback Analysis
-    # cwd = os.getcwd()
-    # dataDir = os.path.join(cwd, "data/1-b-converted-synthetic-data")
-    # cafAnalysis(dataDir)
-    # setAnalysis(dataDir)
+    cwd = os.getcwd()
+    dataDir = os.path.join(cwd, "data/1-c-converted-synthetic-data")
+    cafAnalysis(dataDir)
+    setAnalysis(dataDir)
 
 
 if __name__ == "__main__":
