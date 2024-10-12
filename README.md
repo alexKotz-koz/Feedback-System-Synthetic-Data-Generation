@@ -36,7 +36,7 @@ python3 main.py
 ## Description of Data
 
 - Location of sythnetically generated data: /src/data/
-     - real-world/FeedbackClassificationDataset.csv: A manually extracted dataset of athenaHealth EHR marketplace application store reviews Extracted the ... 
+     - real-world/FeedbackClassificationDataset.csv: A manually extracted dataset of athenaHealth EHR marketplace application store reviews. This dataset was used to identifiy the range of number of words per clinical decision support tool/ health care application review feedback data. 
      - 1-a-converted-synthetic-data/clinical-application-feedback-data-temp-{temperature}.json: Synthetic clinical decision support tool/healthcare application reviews
         - Arguments:
             - llm: gpt4
