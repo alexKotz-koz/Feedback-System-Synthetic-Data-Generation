@@ -41,25 +41,36 @@ def setAPI():
 def main():
     setAPI()
 
-    # temperature = 0.2
+    # temperature = 1.4
 
     ### Generate Feedback from DataDreamer
-    # setOutputDirName = f"student-feedback-output-temp-{temperature}-c"
+    # setOutputDirName = f"student-feedback-output-temp-{temperature}-d"
     # generateStudentFeedback(temperature=temperature, outputDirName=setOutputDirName)
-    # generateStudentFeedbackAttributed(temperature=0.5, outputDirName=setOutputDirName)
+    ##generateStudentFeedbackAttributed(temperature=0.5, outputDirName=setOutputDirName)
 
-    # cafOutputDirName = f"clinical-application-feedback-output-temp-{temperature}-c"
-    # generateClinicalApplicationFeedback(temperature=temperature, outputDirName=cafOutputDirName)
+    # cafOutputDirName = f"clinical-application-feedback-output-temp-{temperature}-d"
+    # generateClinicalApplicationFeedback(
+    #    temperature=temperature, outputDirName=cafOutputDirName
+    # )
 
     ### Clean and otherwise transform the data
-    # convertStudentFeedbackData(setOutputDirName, f"student-feedback-data-temp-{temperature}-c.json")
-    # convertClinicalApplicationFeedbackData(cafOutputDirName,f"clinical-application-feedback-data-temp-{temperature}-c.json")
+    # convertStudentFeedbackData(setOutputDirName, f"student-feedback-data-temp-{temperature}-d.json")
+    # convertClinicalApplicationFeedbackData(
+    #    cafOutputDirName,
+    #    f"clinical-application-feedback-data-temp-{temperature}-d.json",
+    # )
 
     ### Feedback Analysis
     cwd = os.getcwd()
-    dataDir = os.path.join(cwd, "data/1-c-converted-synthetic-data")
-    cafAnalysis(dataDir)
-    setAnalysis(dataDir)
+    dataDir = os.path.join(cwd, "data/1-d-converted-synthetic-data")
+    cafResults = cafAnalysis(dataDir)
+
+    with open("data/results/caf.json", "w") as file:
+        json.dump(cafResults, file)
+
+    setResults = setAnalysis(dataDir)
+    with open("data/results/set.json", "w") as file:
+        json.dump(setResults, file)
 
 
 if __name__ == "__main__":

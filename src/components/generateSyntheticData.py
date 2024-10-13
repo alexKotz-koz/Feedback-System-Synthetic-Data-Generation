@@ -76,7 +76,7 @@ def generateStudentFeedback(temperature, outputDirName):
                 "temperature": temperature,
                 "instruction": (
                     "Generate a student evaluation of teaching feedback comment of a graduate school course from the perspective of a student who has just completed the course.",
-                    "Please make the feedback comment between 22 and 106 words.",
+                    "Please make the feedback comment between 5 and 106 words.",
                     "Please randomly choose between negative or positive sentiment. Make the feedback comment overwhelmingly {your chosen sentiment}.",
                     "Please format the data as: 'Course Name: {course_name} | Student Feedback: {student_feedback_comment}'",
                 ),
@@ -98,7 +98,7 @@ def generateClinicalApplicationFeedback(temperature, outputDirName):
                 "temperature": temperature,
                 "instruction": (
                     "Generate a review of a clinical decision support tool or health care application from the perspective of a practicing medical provider (e.g. doctor, physicans assistant, nurse, or medical assistant).",
-                    "Please make the review between 45 and 101 words.",
+                    "Please make the review between 5 and 101 words.",
                     "Please randomly choose between negative or positive sentiment. Make the feedback comment overwhelmingly {your chosen sentiment}.",
                     "Please format the data as: 'Name of Application/Tool: {name_of_app} | Application Review: {application_review}'",
                 ),

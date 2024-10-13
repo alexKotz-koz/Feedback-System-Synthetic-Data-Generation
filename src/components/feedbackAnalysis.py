@@ -52,13 +52,16 @@ def getSentiment(feedback):
     analyzer = SentimentIntensityAnalyzer()
     scores = analyzer.polarity_scores(feedback)
     sentiment = 1 if scores["pos"] > 0 else 0
-    return scores
+    return sentiment
 
 
 def cafAnalysis(dataDir):
+
+    results = {}
+
     parentDir = os.path.dirname(os.path.abspath(dataDir))
 
-    analyzedDir = os.path.join(parentDir, "2-c-sentiment-analyzed")
+    analyzedDir = os.path.join(parentDir, "2-d-sentiment-analyzed")
     os.makedirs(analyzedDir, exist_ok=True)
 
     for file in os.listdir(dataDir):
@@ -73,7 +76,7 @@ def cafAnalysis(dataDir):
                 cafNumWords, cafAvgWords = wordCount(cafData)
 
                 processedFeedback = cafData["feedback"].apply(preprocessText)
-                cafData["sentiment"] = processedFeedback.apply(getSentiment)
+                sentiment = processedFeedback.apply(getSentiment).tolist()
 
                 cafLexicon = " ".join(cafData["feedback"])
                 cafLexicalDiversity = lexicalDiversity(cafLexicon)
@@ -81,8 +84,8 @@ def cafAnalysis(dataDir):
                 newFileName = f"clinicalApplicationFeedback-{temp}"
                 newFilePath = os.path.join(analyzedDir, newFileName)
                 cafData.to_json(f"{newFilePath}.json")
-
-                print(
+                print(filename)
+                """print(
                     f"\nTotal Word Count clinicalApplicationFeedback-{temp}: {cafNumWords}"
                 )
                 print(
@@ -91,12 +94,24 @@ def cafAnalysis(dataDir):
                 print(
                     f"Lexical Diversity clinicalApplicationFeedback-{temp}: {cafLexicalDiversity}"
                 )
+                print(f"Sentiment clinicalApplicationFeedback-{temp}: {sentiment}")"""
+                print(type(sentiment))
+                results[filename] = {
+                    "TotalWordCount": cafNumWords,
+                    "AvgWordCount": cafAvgWords,
+                    "LexicalDiversity": cafLexicalDiversity,
+                    "Sentiment": sentiment,
+                }
+
+    return results
 
 
 def setAnalysis(dataDir):
+    results = {}
+
     parentDir = os.path.dirname(os.path.abspath(dataDir))
 
-    analyzedDir = os.path.join(parentDir, "2-c-sentiment-analyzed")
+    analyzedDir = os.path.join(parentDir, "2-d-sentiment-analyzed")
     os.makedirs(analyzedDir, exist_ok=True)
 
     for file in os.listdir(dataDir):
@@ -112,7 +127,7 @@ def setAnalysis(dataDir):
                 setNumWords, setAvgWords = wordCount(setData)
 
                 processedFeedback = setData["feedback"].apply(preprocessText)
-                setData["sentiment"] = processedFeedback.apply(getSentiment)
+                sentiment = processedFeedback.apply(getSentiment).tolist()
 
                 setLexicon = " ".join(setData["feedback"])
                 setLexicalDiversity = lexicalDiversity(setLexicon)
@@ -126,3 +141,10 @@ def setAnalysis(dataDir):
                 print(
                     f"Lexical Diversity clinicalApplicationFeedback-{temp}: {setLexicalDiversity}"
                 )
+                results[filename] = {
+                    "TotalWordCount": setNumWords,
+                    "AvgWordCount": setAvgWords,
+                    "LexicalDiversity": setLexicalDiversity,
+                    "Sentiment": sentiment,
+                }
+    return results
