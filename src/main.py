@@ -1,6 +1,6 @@
 import os
 import json
-
+import pandas as pd
 from components.generateSyntheticData import (
     generateClinicalApplicationFeedback,
     generateStudentFeedback,
@@ -23,6 +23,10 @@ from components.feedbackAnalysis import (
     cafAnalysis,
 )
 
+from components.classification import evaluate
+
+from sklearn.metrics import accuracy_score, f1_score
+
 """
 Abbreviations: 
 - CAF: Clinical Application Feedback (Clinical Decision Support Tools or Healthcare Applications)
@@ -41,12 +45,13 @@ def setAPI():
 def main():
     setAPI()
 
-    # temperature = 1.4
+    # temperature = 1.1
 
     ### Generate Feedback from DataDreamer
+
     # setOutputDirName = f"student-feedback-output-temp-{temperature}-d"
     # generateStudentFeedback(temperature=temperature, outputDirName=setOutputDirName)
-    ##generateStudentFeedbackAttributed(temperature=0.5, outputDirName=setOutputDirName)
+    ##generateStudentFeedbackAttributed(temperature=temperature, outputDirName=setOutputDirName)
 
     # cafOutputDirName = f"clinical-application-feedback-output-temp-{temperature}-d"
     # generateClinicalApplicationFeedback(
@@ -71,6 +76,8 @@ def main():
     setResults = setAnalysis(dataDir)
     with open("data/results/set.json", "w") as file:
         json.dump(setResults, file)
+
+    evaluate()
 
 
 if __name__ == "__main__":

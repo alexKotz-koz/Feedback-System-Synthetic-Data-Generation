@@ -84,18 +84,15 @@ def cafAnalysis(dataDir):
                 newFileName = f"clinicalApplicationFeedback-{temp}"
                 newFilePath = os.path.join(analyzedDir, newFileName)
                 cafData.to_json(f"{newFilePath}.json")
-                print(filename)
-                """print(
+                print(
                     f"\nTotal Word Count clinicalApplicationFeedback-{temp}: {cafNumWords}"
                 )
                 print(
                     f"Avg Word Count clinicalApplicationFeedback-{temp}: {cafAvgWords}"
                 )
                 print(
-                    f"Lexical Diversity clinicalApplicationFeedback-{temp}: {cafLexicalDiversity}"
+                    f"Lexical Diversity clinicalApplicationFeedback-{temp}: {cafLexicalDiversity}\n"
                 )
-                print(f"Sentiment clinicalApplicationFeedback-{temp}: {sentiment}")"""
-                print(type(sentiment))
                 results[filename] = {
                     "TotalWordCount": cafNumWords,
                     "AvgWordCount": cafAvgWords,
@@ -137,9 +134,9 @@ def setAnalysis(dataDir):
                 setData.to_json(f"{newFilePath}.json")
 
                 print(f"\nTotal Word Count studentFeedback-{temp}: {setNumWords}")
-                print(f"Avg Word Count studentFeedback-{temp}: {setAvgWords}\n")
+                print(f"Avg Word Count studentFeedback-{temp}: {setAvgWords}")
                 print(
-                    f"Lexical Diversity clinicalApplicationFeedback-{temp}: {setLexicalDiversity}"
+                    f"Lexical Diversity clinicalApplicationFeedback-{temp}: {setLexicalDiversity}\n"
                 )
                 results[filename] = {
                     "TotalWordCount": setNumWords,

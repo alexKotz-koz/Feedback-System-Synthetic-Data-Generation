@@ -36,8 +36,12 @@ python3 main.py
 ## Description of Data
 
 - Location of sythnetically generated data: /src/data/
-     - real-world/FeedbackClassificationDataset.csv: A manually extracted dataset of athenaHealth EHR marketplace application store reviews. This dataset was used to identifiy the range of number of words per clinical decision support tool/ health care application review feedback data. 
-     - 1-a-converted-synthetic-data/clinical-application-feedback-data-temp-{temperature}.json: Synthetic clinical decision support tool/healthcare application reviews
+    - Directories:
+        - data/accuracy-temp: Preprocessed labeled data for manual labelling and LLM labelling.
+        - data/labeled-data: Two JSON files containing the information from the Chat-GPT labeling exercise. Full chat history used to generate these data can be found @: https://chatgpt.com/share/6717049f-cc4c-8003-9cf7-734c6993b586 
+        - real-world/FeedbackClassificationDataset.csv: A manually extracted dataset of athenaHealth EHR marketplace application store reviews. This dataset was used to identifiy the range of number of words per clinical decision support tool/ health care application review feedback data. https://marketplace.athenahealth.com/
+        
+    - 1-a-converted-synthetic-data/clinical-application-feedback-data-temp-{temperature}.json: Synthetic clinical decision support tool/healthcare application reviews
         - Arguments:
             - llm: gpt4
             - n: 20
@@ -57,17 +61,17 @@ python3 main.py
                 2. "Please make the number of words per comment follow an average of 64 with a standard deviation of 21.",
                 3. "Please format the data as: 'Course Name: {course_name} | Student Feedback: {student_feedback_comment}'"
 
-    * 1-b-converted-synthetic-data was discarded. This version leveraged the DataFromAttributedPrompt method, which returned unfavorable results.
+    \* 1-b-converted-synthetic-data was discarded. This version leveraged the DataFromAttributedPrompt method, which returned unfavorable results.
 
-     - 1-c-converted-synthetic-data/clinical-application-feedback-data-temp-{temperature}.json: Synthetic clinical decision support tool/healthcare application reviews
+    - 1-c-converted-synthetic-data/clinical-application-feedback-data-temp-{temperature}.json: Synthetic clinical decision support tool/healthcare application reviews
         - Arguments:
             - llm: gpt4
             - n: 20
             - temperature: [0.2, 0.5, 0.8, 1.1]
             - instruction: 
                 1. "Generate a review of a clinical decision support tool or health care application from the perspective of a practicing medical provider (e.g. doctor, physicans assistant, nurse, or medical assistant).",
-                2. "Please make the feedback comment between 22 and 106 words.",
-                3. "Please randomly choose between negative or positive sentiment. Make the feedback comment overwhelmingly {your chosen sentiment}.",
+                2. **"Please make the feedback comment between 22 and 106 words.",**
+                3. **"Please randomly choose between negative or positive sentiment. Make the feedback comment overwhelmingly {your chosen sentiment}.",**
                 4. "Please format the data as: 'Name of Application/Tool: {name_of_app} | Application Review: {application_review}'"
         
     - 1-c-converted-synthetic-data/student-feedback-data-temp-{temperature}.json: Synthetic student evaluation of teaching-like data. 
@@ -77,13 +81,36 @@ python3 main.py
             - temperature: [0.2, 0.5, 0.8, 1.1]
             - instruction:
                 1. "Generate a student evaluation of teaching feedback comment of a graduate school course from the perspective of a student who has just completed the course.",
-                2. "Please make the review between 45 and 101 words.",
+                2. **"Please make the review between 45 and 101 words.",**
+                3. **"Please randomly choose between negative or positive sentiment. Make the feedback comment overwhelmingly {your chosen sentiment}.",**
+                4. "Please format the data as: 'Course Name: {course_name} | Student Feedback: {student_feedback_comment}'"
+
+
+    - 1-d-converted-synthetic-data/clinical-application-feedback-data-temp-{temperature}.json: Synthetic clinical decision support tool/healthcare application reviews
+        - Arguments:
+            - llm: gpt4
+            - n: 20
+            - temperature: [0.2, 0.5, 0.8, 1.1, 1.4]
+            - instruction: 
+                1. "Generate a review of a clinical decision support tool or health care application from the perspective of a practicing medical provider (e.g. doctor, physicans assistant, nurse, or medical assistant).",
+                2. "Please make the feedback comment between **5** and 106 words.",
+                3. "Please randomly choose between negative or positive sentiment. Make the feedback comment overwhelmingly {your chosen sentiment}.",
+                4. "Please format the data as: 'Name of Application/Tool: {name_of_app} | Application Review: {application_review}'"
+        
+    - 1-d-converted-synthetic-data/student-feedback-data-temp-{temperature}.json: Synthetic student evaluation of teaching-like data. 
+        - Arguments:
+            - llm: gpt4
+            - n: 20
+            - temperature: [0.2, 0.5, 0.8, 1.1, 1.4]
+            - instruction:
+                1. "Generate a student evaluation of teaching feedback comment of a graduate school course from the perspective of a student who has just completed the course.",
+                2. "Please make the review between **5** and 101 words.",
                 3. "Please randomly choose between negative or positive sentiment. Make the feedback comment overwhelmingly {your chosen sentiment}.",
                 4. "Please format the data as: 'Course Name: {course_name} | Student Feedback: {student_feedback_comment}'"
-        
----
+
+
 ### Description of output
-The current activate code in main.py will run feedback analysis on the 1-c-converted-synthetic-data dataset. All outputs are results of the feedback analysis. Sentiment analysis results can be found in the src/data/2-c-sentiment-analyzed directory at the bottom of each json file. 
+The current activate code in main.py will run feedback analysis on the 1-d-converted-synthetic-data dataset. Results from the feedback analysis can be found in src/data/results (set = Student Evaluation of Teaching | caf = Clinical Application Feedback). Sentiment analysis, lexical diversity, average word count, and total word count for each file is located in the two results files. Previous analyses can be found under the 2-{a-d}-sentiment-analyzed directories, where this data is embedded in the same file as the actual data. Additionally, the call to evaluate() in main.py will generate accuracy and f1 scores for the manually labelled vs Chat-GPT v 4o labelled data.
 
 ---
 
